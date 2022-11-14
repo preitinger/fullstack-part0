@@ -3,12 +3,12 @@ title 0.6 - Adding note in single page app
 user->browser: enter text in text field
 user->browser: enter key or click on save button
 note over browser:
-browser collects data from the form and generates a onsubmit event,
+browser collects data from the form and generates an onsubmit event,
 i.e. calls callback in Javascript.
 Javascript code reads value of form element and
 creates a new note object,
-adds it to the global notes list,
-redraws the notes list by manipulating the DOM,
+adds it to the notes array,
+redraws the notes in the array by manipulating the DOM,
 creates POST XMLHttpRequest with content and date of the new note
 end note
 browser->server: HTTP POST https://studies.cs.helsinki.fi/exampleapp/new_note_spa
