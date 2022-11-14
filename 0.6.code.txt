@@ -1,0 +1,23 @@
+title 0.6 - Adding note in single page app
+
+user->browser: enter text in text field
+user->browser: enter key or click on save button
+note over browser:
+browser collects data from the form and generates a onsubmit event,
+i.e. calls callback in Javascript.
+Javascript code reads value of form element and
+creates a new note object,
+adds it to the global notes list,
+redraws the notes list by manipulating the DOM,
+creates POST XMLHttpRequest with content and date of the new note
+end note
+browser->server: HTTP POST https://studies.cs.helsinki.fi/exampleapp/new_note_spa
+note over server:
+server adds the new note to its own list, so its available
+when next user opens the page (and therefore its browser requests data.json as in 0.5).
+end note
+server-->browser: HTTP response with json {"message":"note created"}
+note over browser
+browser sets the responseText in the XMLHttpRequest object and calls the callback for status change,
+there javascript logs the response text to console
+end note
